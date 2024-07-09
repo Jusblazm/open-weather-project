@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gradient-to-b from-cyan-500 to-slate-300">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- find my favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <script defer src="js/weather.js"></script>
+    <!-- canvasJS for forecast line chart -->
+    <script defer src="https://cdn.canvasjs.com/ga/canvasjs.min.js"></script>
+    <!-- use fontawesome svgs -->
+    <script src="https://kit.fontawesome.com/0f96b1f170.js" crossorigin="anonymous"></script>
+    <title>OpenWeatherMap</title>
+</head>
+
+<body class="text-center">
+    <main class="w-full inline-block">
+        <h1 class="text-4xl">OpenWeatherMap API</h1>
+
+        <div class="relative w-fit group inline-flex justify-center my-4">
+            <input type="text" id="zip" name="zip"
+                class="border-2 block px-4 py-2 w-full text-gray-900 bg-transparent rounded-s-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                placeholder=" " />
+                <!-- floating placeholder throws contrast error -->
+            <label for="zip"
+                class="absolute text-sm font-semibold text-gray-500 bg-cyan-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-1 ml-1 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 start-1">Zip
+                Code</label>
+            <button type="button" id="getWeather"
+                class="w-[2.875rem] h-[2.875rem] flex-shrink-0 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-e-md bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>
+                <span class="sr-only">Search Button</span>
+            </button>
+        </div>
+
+        <!-- weather data divs below -->
+        <div id="msg" class="w-full hidden justify-self-auto"></div>
+        <div class="w-[90%] inline-block justify-self-auto">
+            <div id="visualContainer" class="-mt-8"></div>
+        </div>
+        <div id="forecastTitle" class="w-fit px-2 bg-white inline-block z-20 relative top-[2px]"></div>
+        <div id="weeklyForecast" class="flex flex-row justify-center z-10">
+            <!-- weather div is used to display the data -->
+            <div id="weather" class="w-3/5 bg-white"></div>
+            <div id="weatherDetailed" class="w-1/5 bg-white"></div>
+        </div>
+    </main>
+</body>
+
+</html>

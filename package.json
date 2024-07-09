@@ -1,0 +1,8 @@
+{
+    "name": "root-project",
+    "version": "1.0.0",
+    "scripts": {
+      "dev": "npm --prefix tailwind run dev"
+    }
+  }
+  
